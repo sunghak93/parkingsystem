@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>주차관리시스템</title>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <section class="login_form">
+      <h1>주차관리시스템</h1>
+      <form action="" method="post">
+        <div class="int_area">
+          <input type="text" name="id" id="id" autocomplete="off" required>
+          <label for="id">아이디</label>
+        </div>
+        <div class="int_area">
+          <input type="password" name="pw" id="pw" autocomplete="off" required>
+          <label for="pw">비밀번호</label>
+        </div>
+        <div class="btn_area">
+          <button id="btn" type="submit"><b>로그인</b></button>
+        </div>
+      </form>
+      <div class="caption">
+        <a href="./signup.html">회원가입</a>
+        <a href="./find.html">비밀번호 찾기</a>
+      </div>
+    </section>
+
+    <script>
+        let id = $('#id');
+        let pw = $('#pw');
+        let btn = $('#btn');
+
+        $(btn).on('click', function(){
+          if($(id).val() == ""){
+              $(id).next('label').addClass('warning');
+              setTimeout(function(){
+                $('label').removeClass('warning');
+              },1500);
+          }
+          else if($(pw).val() == ""){
+              $(pw).next('label').addClass('warning');
+              setTimeout(function(){
+                $('label').removeClass('warning');
+              },1500);
+          }
+        });
+    </script>
+
+  </body>
+</html>
